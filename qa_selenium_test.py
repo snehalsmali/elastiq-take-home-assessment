@@ -31,9 +31,9 @@ class TestTableSearch:
             print(row.text)
         print(f"Number of result rows: {len(visible_rows)} out of {total_rows}")
         assert len(visible_rows) > 0, "No rows are visible after filtering for 'New York'"
-        time.sleep(5)
+        time.sleep(3)
 
-    def test_search_result_count_positive(self, driver):
+    def test_search_result_count(self, driver):
         visible_rows, _ = self.navigate_and_search(driver, "New York")
         assert len(visible_rows) == 5, f"Expected 5 rows, but found {len(visible_rows)}"
         time.sleep(3)
